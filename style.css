@@ -1,0 +1,668 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(images/background-home.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#about{
+    background: url(images/background-about.jpg) no-repeat center center fixed;
+    background-size: cover;
+}  
+
+@font-face{
+    font-family: 'NeoNeon-Light';
+    src: url(fonts/NeoNeon-Light.otf);
+}
+@font-face{
+    font-family: 'OPTISantita';
+    src: url(fonts/OPTISantita.otf);
+}
+
+/* NAV ---------------------------------------------------------- */
+header{
+    background: #5A0000;
+    height: 60px;
+    width: 100%;
+    position: fixed;  
+    top: 0;
+    z-index: 15;
+    box-shadow: 1px 1px 2px #111;
+    transition: .3s;
+}
+
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 60px;
+    margin: auto;
+}
+.logo{
+    display: flex;
+    margin-top: 5px;
+}
+
+.logo img{
+    height: 50px;
+    margin-left: 10px;
+}
+
+.nav{
+    display: flex; 
+    gap: 60px; 
+    margin-right: 20px;  
+  }
+  
+.nav a{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    text-decoration: none; 
+    transition: 0.5s;
+}
+  
+.nav a:hover{
+    text-shadow: 0 0 3px #fff, 0 0 5px #00eeff ;
+    font-size: 50px;
+}
+
+/* NEON --------------------------- */
+.neon-container{
+    position: fixed;
+    align-items: center;
+    top: 50%;
+    left: 3%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    border: px solid red;
+    text-decoration: none;
+}
+
+.neon-home, .neon-galeria, .neon-about{
+    color: #fff;
+    font-size: 80px;
+    font-family: "NeoNeon-Light";
+    font-weight: lighter;
+    writing-mode:vertical-lr ;
+    text-orientation:upright;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 30px #ff0000, 0 0 50px #ff0000 ;
+    animation: flicker 1s infinite backwards steps(2);
+}
+.neon-galeria{
+    font-family: 'OPTISantita';
+    letter-spacing: -20px;
+}
+
+
+
+.neon-2{
+    color: #00eeff;
+    font-family: 'OPTISantita';
+    font-size: 50px;
+    font-weight: lighter;
+    text-shadow: 0 0 5px #00eeff, 0 0 10px #00eeff;
+    margin-top: 10px;
+}
+
+@keyframes flicker{
+    to{
+        color: #aaa;
+        text-shadow: none;
+    }
+}
+
+@media (max-width: 500px){
+    .neon-home{
+        font-size: 60px;
+    }
+    .neon-2{
+        font-size: 30px;
+    }
+}
+
+/* RESPONSIVE Menú------------------------------------- */
+.logo-2{
+    display: none;
+}
+  
+.menu-btn{
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 20px;
+    right: 30px;
+    font-size: 1.5rem;
+    display: none; 
+    z-index: 1000;
+}
+  
+.nav-responsive{
+    display: none;
+}
+  
+@media (max-width:600px){
+    .logo-1{
+      display: none;
+    }
+    .logo-2{
+      display: block;
+    }
+}
+
+@media (max-width:900px){
+    .nav{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+        position: fixed;
+    }
+  
+    .nav-responsive{
+        display: block;
+        position: fixed;
+        z-index: 5000;
+        margin-top: 60px;
+        top: 0;
+    }
+  
+    .nav-responsive ul{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(2, 14, 14, 0.9);
+        height: 500px;
+        padding: 30px;
+        transform: translateY(-800px);
+        transition: transform .5s ease-in-out;      
+        
+    }
+    .nav-responsive a{
+        color: #fff;
+        text-decoration: none;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .konoha{
+        height: 25px;
+        margin-top: 20px;
+    }
+
+    .konoha:hover{
+        filter: drop-shadow(0 0 5px #00eeff) ;
+    }
+    .nav-responsive a:hover{
+        text-shadow: 0 0 5px #00eeff, 0 0 10px #00eeff;
+    }
+  
+    .nav-responsive ul.show{
+        transform: translateX(0px);
+    }
+    
+    .nav-responsive ul li{
+        text-align: center;
+        padding: 30px;
+        font-size: 14px;
+        border: px solid red;
+    }
+}
+
+/* COLLAGE ---------------------------------------------------------- */
+.collage-container, .about-container{
+    position: relative;
+    width: 100%;  /* Se adapta al ancho del viewport */
+    max-width: 1200px;  /* Máximo tamaño en pantallas grandes */
+    height: 100vh;  /* Permite ajustar la altura automáticamente */
+    aspect-ratio: 16/9; /* Mantiene la proporción */
+    margin: auto;
+    /* filter: drop-shadow(0 0 20px #fff) ; */
+    
+
+}
+
+.image-section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('images/index-back-2.jpg') center/cover no-repeat; /* Mueve la imagen aquí */
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Definir las zonas del collage */
+.section1 { clip-path: polygon(0% 0%, 22.7% 0%, 33.5% 100%, 0% 100%); }
+.section2 { clip-path: polygon(22.6% 0%, 78% 0%, 66.6% 100%, 33.3% 100%); }
+.section3 { clip-path: polygon(75% 0%, 100% 0%, 100% 100%, 64% 100%); }
+
+/* Efecto al hacer hover */
+.image-section:hover {    
+    filter: grayscale(0%);
+    cursor:cell;
+}
+
+
+@media (max-width: 1300px){
+    .collage-container{
+        max-width: 800px;
+    }
+}
+
+/* ABOUT --------------------------------------------------------- */
+.image-about{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('images/back-about-juan.png') center/cover no-repeat;
+}
+
+.title-about{
+    position: relative;
+}
+
+.info-about{
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px){
+    .image-about{
+        background: url('images/back-about-juan02.png') center/cover no-repeat;
+    }
+    .info-about{
+        margin-top: 20px;
+        margin-left: 25px;
+    }
+    
+    .info-about img{
+        width: 250px;
+    }
+}
+
+
+
+/* SOCIAL ---------------------------------------------------------- */
+.social-menu {
+    position: fixed;
+    top: 50%;
+    right: 3%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.social-menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 30px #ff0000, 0 0 50px #ff0000;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.facebook:hover {
+    background: #0044ff;
+    transform: scale(1.1);
+}
+
+.twitter:hover {
+    background: #00eeff;
+    transform: scale(1.1);
+}
+
+.instagram:hover {
+    background: #ff00bf;
+    transform: scale(1.1);
+}
+
+.whatsapp:hover {
+    background: #2bff00;
+    transform: scale(1.1);
+}
+
+.mobile-wa{
+    display: none;
+}
+
+/* Responsive - SOCIAL --- */
+
+@media (max-width: 500px){
+    .social-menu a{
+        width: 30px;
+        height: 30px;
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; 
+    }
+    .desktop-wa{
+        display: none;
+    }
+    .mobile-wa{
+        display: block;
+    }
+}
+
+/* GALERIA --------------------------------------------------------- */
+
+.gallery, .contact, .about{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.title-galeria, .title-contacto, .title-about{
+    color: #00eeff;
+    font-family: 'OPTISantita';
+    font-size: 50px;
+    font-weight: lighter;
+    text-shadow: 0 0 5px #00eeff, 0 0 10px #00eeff;
+    animation: flicker 1s infinite backwards steps(2);
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px){
+    .title-galeria, .title-contacto, .title-about{
+        display: block;
+        font-size: 35px;
+    }
+
+}
+
+.gallery-flex-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin:10px;
+    gap: 5px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: stretch;
+    box-sizing: border-box;
+    position: relative;
+    gap: 5px;
+}
+
+.row img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    aspect-ratio: 1/1;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    display: block;
+  }
+  
+  .gallery-item:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    z-index: 2;
+  }
+
+/* LigthBox */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+  
+.lightbox img {
+    max-width: 100%;
+    max-height: 90%;
+    border-radius: 5px;
+}
+  
+.lightbox .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    z-index: 2000;
+}
+  
+.lightbox .close-btn:hover {
+    background: rgb(255, 115, 0);
+    color: #fff;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    color: white;
+    z-index: 2000;
+    transition: background 0.3s;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.lightbox:hover .nav-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+
+.prev-btn {
+    left: 30px;
+}
+
+.next-btn {
+    right: 30px;
+}
+
+
+/* ULTIMO DETALLE DE NAVEGACION EN GALERIA -- CHECK CHAT KAREN -- */
+
+
+
+
+.images-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+    margin-top: 30px;
+}
+
+.images-container img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* CONTACTO -------------------------------------- */
+.contact-info{
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4em;
+    text-align: center;
+    margin: 20px 0 50px;
+}
+
+@media (max-width: 600px){
+    .contact-info{
+        font-size: 1em;
+    }
+}
+form {
+    width: 30em;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #0000009c;
+    border-radius: 3px;
+    box-shadow: 0px 0px 20px rgb(118, 192, 170);
+    margin-bottom: 3em;
+}
+label{
+    color: #ffffff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-top: 3px;
+    background-color: #80808196;
+    border: 1px solid #979696;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #023b20;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    transition: 0.3s;
+    background-color: #01522c;
+}
+
+#mensaje-exito {
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1.5em;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.error-msj{
+    color: #890989;
+}
+
+.maps{
+    width: 50em;
+    margin:auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 1em;
+    margin-bottom: 2em;
+    border: 4px solid #023b20;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(118, 192, 170);
+}
+.maps iframe{
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+    .maps{
+       width: 90%;
+    }
+}
+
+
+/* FOOTER ---------------------------------------------------------- */
+footer{
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-home, .footer-about{
+    bottom: 0;
+}
+
+footer a{
+    color: #f8916b;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #ff4500;
+    transition: 0.3s;
+}
+
+footer p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 500px){
+    footer p{
+        font-size: 0.7em;
+        margin: 0 10px 0 10px;
+    }
+}
+
+
+/* BACKGROUND RESPONSIVE... ANALIZAR CEL QUE LE HICE A LUIS, CREO QUE ES POR TAMAÑO DE IMAGEN... */
+
+
+
+/* Al hacer click sobre un sector del collage, queda encendido el color... asi como lo puede qapagar... supongo que con javascript, dando una funcion 'onclick' por ej con  una funcion show en css */
+
+/* la galeria se debe visualizar en responsive como en facebook app */
+

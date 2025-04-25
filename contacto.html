@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/db1280d519.js" crossorigin="anonymous"></script>
+    <title>A-iNK Tattoo</title>
+</head>
+<body>
+
+  <header>
+    <nav class="main-nav">
+      <div class="logo">
+        <a href="index.html" class="logo-1"><img src="images/logo.png" alt=""></a>
+        <a href="index.html" class="logo-2"><img src="images/logo-2.png" alt=""></a>
+      </div>
+      <div class="nav">
+        <a href="about.html">About</a>
+        <a href="galeria.html">ArtWork</a>
+        <a href="contacto.html">CONTACTO</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="menu-btn">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <nav class="nav-responsive">
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="galeria.html">ArtWork</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+      <li><a href=""><img class="konoha" src="images/konoha.png" alt=""></a></li>
+    </ul>     
+  </nav>
+
+
+  <div class="contact">
+    <h2 class="title-contacto" style="color: aliceblue;">
+      Contacto
+    </h2>
+    <p class="contact-info">No dudes en comunicarte y consultar lo que desees. Te responderemos a la brevedad!</p>
+
+    <form id="contact-form" action="contacto.php" method="POST">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+      
+      <label for="email">Mail</label>
+      <input type="email" id="email" name="email" placeholder="Tu mail" required>
+      
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" rows="4"  required></textarea>
+      
+      <button formaction="" type="submit">Enviar</button>
+    </form>
+    <div id="response-message"></div>
+
+    <div class="maps">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209.42101293566523!2d-68.83585457259043!3d-32.878698274194285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e08e06ec71a2b%3A0xf528bff9ad1c99a5!2sBeltr%C3%A1n%207%2C%20M5500FIB%20Mendoza!5e0!3m2!1ses!2sar!4v1745447408368!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+        
+  </div>
+
+
+
+
+  <div class="social-menu">
+     <a href="https://www.facebook.com/juan.jimenez.9638" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+     <a href="https://twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+     <a href="https://www.instagram.com/anonimo_inker/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+     <div class="desktop-wa"><a href="https://web.whatsapp.com/send?phone=5492613120003" class="whatsapp"><i class="fab fa-whatsapp"></i></a></div>
+     <div class="mobile-wa"><a href="whatsapp://send?phone=5492613120003" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a></div>
+  </div>
+
+  <footer>
+     <p>
+        Copyright - ©2025 A-iNk - All rights reserved - <a href="">Desarrollo & diseño Lisandro Larraya Inc.</a>
+     </p>
+  </footer>
+
+  <script src="codigo.js"></script>
+</body>
+</html>
